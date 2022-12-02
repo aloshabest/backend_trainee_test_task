@@ -4,19 +4,19 @@ from .models import Advert
 
 def title_valid(title):
     if len(title) > 200:
-        raise serializers.ValidationError('description should be no more than 1000 letters')
+        raise serializers.ValidationError('Наименование товара должно быть не более 200 символов')
     return title
 
 
 def desc_valid(desc):
     if len(desc) > 1000:
-        raise serializers.ValidationError('description should be no more than 1000 letters')
+        raise serializers.ValidationError('Описание товара должно быть не более 1000 символов')
     return desc
 
 
 def images_valid(images):
     if len(images) > 3:
-        raise serializers.ValidationError('should be no more than 3 photos')
+        raise serializers.ValidationError('Максимум 3 фото для одного товара')
     return images
 
 
