@@ -1,0 +1,9 @@
+FROM python:slim
+
+WORKDIR /root/adv-backend-trainee-assignment
+
+COPY ${REPO_DIR} /root/adv-backend-trainee-assignment/
+
+RUN apt-get update && \
+    apt-get -y install git build-essential libssl-dev libffi-dev libpq-dev && \
+    pip3 install -r requirements.txt
